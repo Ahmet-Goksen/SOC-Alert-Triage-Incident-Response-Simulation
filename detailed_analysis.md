@@ -51,7 +51,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **Hypothesis:** Likely related to a legitimate scheduled task or software update causing benign detections.
 *   **Decision:** Reported as false positives and recommended rule tuning.
 *   Handled all other similar non-malicious process alerts using the same methodology.
-![Screenshot of the first phising attempt](screenshots/False-Positive-Process-Alert.png)
+![Screenshot of example alert of non-malicious process](screenshots/False-Positive-Process-Alert.png)
 
 ### Spam Email Alert Pattern Recognition
 *   Noticed multiple "Suspicious email from external domain" alerts (IDs: 1003, 1004, 1011, etc.).
@@ -65,6 +65,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     *   Emails offered products/services (commercial spam).
 *   **Hypothesis:** These alerts represent unsolicited commercial email (spam) rather than malicious phishing attempts.
 *   **Decision:** Reported as false positives, recommended rule tuning and adding sender domains to the spam filter.
+![Screenshot of example alert of non-malicious spam email alert](screenshots/False-Positive-Spam-Email-Alert.png)
 
 ### Alert #1005 - Beginning of Attacker Infiltration
 *   **Alert Details:** "Suspicious attachment found in email" from sender `john@hatmakereurope.xyz` to recipient `michael.ascot@tryhatme.com`.

@@ -78,9 +78,9 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     4.  Subsequent alerts supported the phishing hypothesis.
 *   **Conclusion:** True Positive - Initial access Phishing (T1566) and User Execution (T1204) attempt.
 *   **Action Taken:** Documented IOCs, escalated to SOC L2, recommended blocking sender domain and user awareness training.
-![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
-![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
-![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
+![alert](screenshots/Alert-1005.png)
+![Threat intelligence](screenshots/Phishing-Email-Attachment-Threat-Intelligence-Part-1.png)
+![Threat intelligence](screenshots/Phishing-Email-Attachment-Threat-Intelligence-Part-2.png)
 
 ### Alert #1020 - Follow-up to Initial Compromise
 *   **Alert Details:** "PowerShell Script in Downloads Folder" on host `win-3450` for user `michael.ascot`.
@@ -102,6 +102,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     *   Documented IOCs (user, host, timestamps).
     *   Initiated threat hunting for lateral movement.
 *   **Recommended Action:** Isolate host `win-3450` and disable user `michael.ascot`'s account.
+![Threat intelligence](screenshots/Phishing-Email-Attachment-Threat-Intelligence-Part-2.png)
 
 ### Alert #1022 - Lateral Movement and Data Discovery
 *   **Alert Details:** "Network drive mapped to a local drive" on compromised host `win-3450`.

@@ -117,7 +117,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **MITRE ATT&CK Mapping:** T1021.002 (SMB), T1039 (Data from Network Share), T1570 (Lateral Tool Transfer).
 *   **Actions Taken:** Escalated, documented IOCs (including command line).
 *   **Recommended Action:** Terminate sessions to `FILESRV-01`, confirm host isolation, preserve logs.
-![Alert](screenshots/Alert-1020.png)
+![Alert](screenshots/Alert-1022.png)
 
 ### Alert #1023 - Data Collection and Exfiltration Preparation
 *   **Alert Details:** "Suspicious Parent Child Relationship" on host `win-3450`.
@@ -131,6 +131,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **MITRE ATT&CK Mapping:** T1005, T1020, T1560, T1074.001.
 *   **Actions Taken:** Blocked outbound traffic from host, created forensic images, elevated severity to Critical.
 *   **Recommended Actions:** Scan `FILESRV-01`, assess data loss, review user access, hunt for exfiltration.
+![Alert](screenshots/Alert-1023.png)
 
 ### Alert #1024 - Attacker Cleanup and Operational Security
 *   **Alert Details:** "Network drive disconnected from a local drive" on host `win-3450`.
@@ -144,6 +145,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **MITRE ATT&CK Mapping:** T1070.004 (Indicator Removal), T1202 (Indirect Command Execution).
 *   **Actions Taken:** Finalized attack timeline, prioritized RAM capture for forensics.
 *   **Recommended Actions:** Consider power isolation of host, perform memory forensics, expand investigation scope.
+![Alert](screenshots/Alert-1024.png)
 
 ### Alerts #1025-1034 - Active Data Exfiltration Phase
 *   **Alert Details:** Multiple "Suspicious Parent Child Relationship" alerts.
@@ -164,6 +166,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     *   Forensic preservation and attack reconstruction.
 
 **Conclusion:** The organization was compromised via a phishing email, leading to a multi-stage attack involving credential theft, lateral movement to a financial server, data staging, and exfiltration via DNS tunneling. The incident demonstrates a complete intrusion lifecycle.
+![Alerts](screenshots/Alerts-1025-to-1034.png)
 
 ## Overall Takeaways
 

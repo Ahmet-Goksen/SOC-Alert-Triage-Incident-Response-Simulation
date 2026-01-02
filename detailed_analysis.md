@@ -51,6 +51,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **Hypothesis:** Likely related to a legitimate scheduled task or software update causing benign detections.
 *   **Decision:** Reported as false positives and recommended rule tuning.
 *   Handled all other similar non-malicious process alerts using the same methodology.
+![Screenshot of the first phising attempt](screenshots/False-Positive-Spam-Email-Alert.png)
 
 ### Spam Email Alert Pattern Recognition
 *   Noticed multiple "Suspicious email from external domain" alerts (IDs: 1003, 1004, 1011, etc.).

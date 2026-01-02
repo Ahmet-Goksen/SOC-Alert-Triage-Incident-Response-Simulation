@@ -40,6 +40,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     3.  Verified no malicious attachments were present.
 *   **Conclusion:** True Positive - Clear Phishing (T1566) attempt.
 *   **Action Taken:** Documented IOC (sender email), recommended blocking sender domain, and suggested user awareness training.
+![Screenshot of the first phising attempt](screenshots/Alert #1000 - Phishing Email Attempt.png)
 
 ### Process Alert Pattern Recognition
 *   Noticed multiple "Suspicious Parent Child Relationship" alerts (IDs: 1001, 1002, etc.).

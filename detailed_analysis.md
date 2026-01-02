@@ -78,6 +78,9 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     4.  Subsequent alerts supported the phishing hypothesis.
 *   **Conclusion:** True Positive - Initial access Phishing (T1566) and User Execution (T1204) attempt.
 *   **Action Taken:** Documented IOCs, escalated to SOC L2, recommended blocking sender domain and user awareness training.
+![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
+![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
+![Screenshot of example alert of non-malicious spam email alert](screenshots/Alert-1005.png)
 
 ### Alert #1020 - Follow-up to Initial Compromise
 *   **Alert Details:** "PowerShell Script in Downloads Folder" on host `win-3450` for user `michael.ascot`.

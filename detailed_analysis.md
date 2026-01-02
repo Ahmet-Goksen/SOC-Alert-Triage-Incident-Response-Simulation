@@ -102,7 +102,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
     *   Documented IOCs (user, host, timestamps).
     *   Initiated threat hunting for lateral movement.
 *   **Recommended Action:** Isolate host `win-3450` and disable user `michael.ascot`'s account.
-![Threat intelligence](screenshots/Phishing-Email-Attachment-Threat-Intelligence-Part-2.png)
+![Alert](screenshots/Alert-1020.png)
 
 ### Alert #1022 - Lateral Movement and Data Discovery
 *   **Alert Details:** "Network drive mapped to a local drive" on compromised host `win-3450`.
@@ -117,6 +117,7 @@ Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulate
 *   **MITRE ATT&CK Mapping:** T1021.002 (SMB), T1039 (Data from Network Share), T1570 (Lateral Tool Transfer).
 *   **Actions Taken:** Escalated, documented IOCs (including command line).
 *   **Recommended Action:** Terminate sessions to `FILESRV-01`, confirm host isolation, preserve logs.
+![Alert](screenshots/Alert-1020.png)
 
 ### Alert #1023 - Data Collection and Exfiltration Preparation
 *   **Alert Details:** "Suspicious Parent Child Relationship" on host `win-3450`.

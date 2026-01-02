@@ -1,10 +1,10 @@
-SOC Alert Triage & Incident Response Simulation
+# SOC Alert Triage & Incident Response Simulation
 
-Scenario
+## Scenario
 
 Acting as a Tier 1 SOC Analyst, I triaged multiple security alerts in a simulated enterprise environment by degerming true/false positives and documenting findings appropriately.
 Objective: To demonstrate proficiency in real-world SOC operations including alert triage, investigation using a SOAR platform, false positive identification, and proper incident documentation.
-Tools & Technologies Used
+## Tools & Technologies Used
 
 Primary Platform:
 •	SOAR/SOC Case Management Platform (Simulator)
@@ -19,12 +19,12 @@ Analyst Tools & Techniques:
 •	Incident Response Playbooks
 •	Case Documentation Templates
 
-Methodology & Key alerts triaged
-Initial Alert Assessment & Prioritization:
+## Methodology & Key alerts triaged
+### Initial Alert Assessment & Prioritization:
 •	Upon login to the SOC platform, I reviewed the alert queue and applied the following prioritization model: Severity → Time → Type
 •	Began investigation with the oldest alert (ID: 1000) 
  
-Alert #1000 - Phishing Email Attempt Investigation (Example Workflow):
+### Alert #1000 - Phishing Email Attempt Investigation (Example Workflow):
 •	Alert Details: "Suspicious email from external domain" with sender eileen@trendymillineryco.me
 •	Investigation Steps:
 1.	Reviewed email headers and content via the integrated case management system
@@ -37,7 +37,7 @@ Alert #1000 - Phishing Email Attempt Investigation (Example Workflow):
 Conclusion: True Positive - Clear Phishing (T1566) attempt 
 Action Taken: Documented IOC (sender email), recommended blocking sender domain, and user awareness training
 
-Process Alert Pattern Recognition:
+### Process Alert Pattern Recognition:
 •	Noticed multiple "Suspicious Parent Child Relationship" alerts (IDs: 1001,1002, etc)
 •	Applied correlation analysis: Both occurred within a 5-minute window of eachother, similar low severity
 •	The relationship svchost.exe → taskhostw.exe is completely normal
@@ -60,7 +60,7 @@ Spam email Alert Pattern Recognition:
 •	Decision: Reported as false positives, recommended rule tuning and adding these sender domains to spam filter
 •	Handled all other similar spam email alerts using the same methodology 
  
-Alert #1005 - Beginning of attacker infiltration:
+### Alert #1005 - Beginning of attacker infiltration:
 •	Received alert " Suspicious attachment found in email " with sender john@hatmakereurope.xyz
 •	Recipient of email: michael.ascot@tryhatme.com 
 •	Investigation Steps:
@@ -73,7 +73,7 @@ Alert #1005 - Beginning of attacker infiltration:
 Conclusion: True Positive - Initial access Phishing (T1566) and User Execution (T1204) attempt
 Action Taken: Documented IOCs as mentioned, escalated to SOC L2, recommended blocking sender domain, and user awareness training
 
-Alert #1020 - Follow-up to Initial Compromise:
+### Alert #1020 - Follow-up to Initial Compromise:
 • Received alert "Powershell Script in Downloads Folder" on host win-3450 for user michael.ascot.
 • File created: C:\Users\michael.ascot\Downloads\PowerView.ps1
 • Investigation Steps:
@@ -103,7 +103,7 @@ Actions Taken:
 •	User action: Disable michael.ascot's account pending forensic investigation
 •	Note: This alert confirms successful execution of the malicious payload from the earlier phishing email and indicates the attacker is now performing reconnaissance within the environment. Immediate containment is critical to prevent further spread.
 
-Alert #1022 - Lateral Movement and Data Discovery:
+### Alert #1022 - Lateral Movement and Data Discovery:
 •	Received alert "Network drive mapped to a local drive" on previously compromised host win-3450 for user michael.ascot.
 •	Network drive mapping: Z: → \\FILESRV-01\SSF-FinancialRecords
 •	Investigation Steps:
@@ -131,7 +131,7 @@ o	Alerting enhancement: Create new detection for anomalous SMB access from previ
 o	Communication: Notify finance department leadership of potential data access incident
 Note: This alert confirms successful lateral movement and targeting of sensitive financial data. The attacker used credentials obtained via initial compromise to access restricted shares. Immediate containment of both source and target systems is critical to prevent data exfiltration.
 
-Alert #1023 - Data Collection and Exfiltration Preparation:
+### Alert #1023 - Data Collection and Exfiltration Preparation:
 •	Alert Received: "Suspicious Parent Child Relationship" on compromised host win-3450 for user michael.ascot.
 •	Activity: Robocopy.exe executed from PowerShell to copy contents of network drive Z: to local directory C:\Users\michael.ascot\downloads\exfiltration.
 Investigation Steps:
@@ -161,7 +161,7 @@ Recommended Immediate Actions:
 •	Threat Hunting: Search for any exfiltration attempts.
 Note: This represents the most critical phase of the attack—data exfiltration staging. The attacker has successfully collected sensitive financial records and is preparing them for removal from the network. Immediate containment and assessment of data loss are paramount. All outbound channels from the affected network segment should be scrutinized for exfiltration attempts.
 
-Alert #1024 - Attacker Cleanup and Operational Security:
+### Alert #1024 - Attacker Cleanup and Operational Security:
 • Alert Received: "Network drive disconnected from a local drive" on compromised host win-3450 for user michael.ascot.
 •	Activity: Network drive Z: disconnected using net.exe with the command use Z: /delete.
 Investigation Steps:
@@ -189,7 +189,7 @@ Recommended Immediate Actions:
 •	Network Forensic Analysis: Scrutinize all outbound connections from the subnet containing win-3450 around the alert timeframe for signs of data exfiltration.
 Note: This cleanup step is a critical marker in the attack lifecycle. The attacker has likely completed their objective on this host. The focus must now shift to containing data loss by analyzing network logs for exfiltration, and preserving volatile evidence from the compromised host before the attacker's next move, which is likely to be establishing persistence elsewhere or executing the final exfiltration of the staged data.
 
-Alerts #1025-1034 - Active Data Exfiltration Phase
+### Alerts #1025-1034 - Active Data Exfiltration Phase
 •	Alert Received: "Suspicious Parent Child Relationship" on compromised host win-3450 for user michael.ascot,
 •	Activity: Multiple alerts (9 instances) show nslookup.exe processes being spawned by the same malicious PowerShell instance (PID 3728) from within the exfiltration directory.
 
@@ -224,7 +224,7 @@ Recommended Actions:
 Note: This represents a successful data breach. The attacker has bypassed traditional security controls using DNS tunneling.
 
 Conclusion: The organization was compromised via a phishing email, leading to a multi-stage attack where the attacker stole credentials, moved laterally to a file server containing financial records, staged the data locally, and exfiltrated it using DNS tunneling. The incident demonstrates a complete intrusion lifecycle, from initial access to data theft.
-Overall Takeaways
+## Overall Takeaways
 
 This investigation highlighted essential principles of effective SOC analysis and incident response:
 •	Context separates noise from threats: The majority of alerts were false positives—benign Windows processes or spam. Accurate triage required correlating events with system knowledge (normal svchost.exe behavior) and business context (marketing emails sent to a hat company).
